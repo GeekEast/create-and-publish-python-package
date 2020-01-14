@@ -46,12 +46,12 @@ cd yuzhuhwq5public
 
 - 创建核心文件
 ```sh
-touch __init__.py bubbler.py
-echo 'name="yuzhuwanghwq5bubbler"' >> yuzhuhwq5public/__init__.py
+touch __init__.py
+echo 'name="yuzhuwanghwq5bubbler"' >> __init__.py
 ```
 <div style="text-align:center; margin:auto"><img src="img/2020-01-14-01-05-55.png"></div>
 
-- 编辑主文件 -  `bubbler.py`
+- 编辑核心文件 -  `__init__.py`
 ```py
 # 这里要提示一点：作业中有三个需求，这个只是打印了排序后的数组
 def bubbleSort(arr):
@@ -65,15 +65,6 @@ def bubbleSort(arr):
  
             if arr[j] > arr[j+1] :
                 arr[j], arr[j+1] = arr[j+1], arr[j]
- 
-# #testing
-# arr = [31, 2, 11, 23, 8, 7, 11,14,20]
- 
-# bubbleSort(arr)
- 
-# print ("sorted:")
-# for i in range(len(arr)):
-#     print ("%d" %arr[i]),
 ```
 - Create `LICENSE`
 ```license
@@ -161,11 +152,6 @@ python3 setup.py sdist bdist_wheel
 ```sh
 git add -A && git commit -m 'update' && git push
 ```
-- 安装package
-```sh
-# 文件在dist下面
-pip install <文件夹名>.tar.gz
-```
 
 ### 发布package
 ```sh
@@ -180,6 +166,30 @@ twine upload dist/*
 python3 setup.py sdist bdist_wheel
 twine upload --skip-existing dist/*
 git add -A && git commit -m 'update' && git push
+```
+
+### 安装package
+- Create Virtual Environment
+```sh
+pip install virtualenv
+virtualenv -p python3 .
+source bin/activate
+```
+- Install Package
+```sh
+pip install yuzhuhwbubbler==0.1.0
+```
+- Use as Module
+```py
+from yuzhuhwbubbler import bubbleSort
+
+arr = [31, 2, 11, 23, 8, 7, 11,14,20]
+ 
+bubbleSort(arr)
+ 
+print ("sorted:")
+for i in range(len(arr)):
+    print ("%d" %arr[i]),
 ```
 
 
