@@ -167,7 +167,7 @@ git add -A && git commit -m 'update' && git push
 pip install <文件夹名>.tar.gz
 ```
 
-### 发布package(可选，作业里用不到，光上传github就行)
+### 发布package
 ```sh
 # 在yuzhuhw5目录下
 pip install --upgrade twine
