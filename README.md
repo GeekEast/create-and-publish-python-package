@@ -174,6 +174,13 @@ pip install --upgrade twine
 twine upload dist/*
 ```
 
+### 更新package
+```sh
+python3 setup.py sdist bdist_wheel
+twine upload --skip-existing dist/*
+git add -A && git commit -m 'update' && git push
+```
+
 
 ### 参考
 - [How to Create and Publish Python Package.](https://dev.to/umeshdhakar/how-to-create-and-publish-python-package-62o)
