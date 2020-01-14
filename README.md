@@ -1,7 +1,7 @@
 ### Github配置
 - 在terminal中生成ssh key
 ```sh
-ssh-keygen -t rsa -b 4096 -C "<github 注册邮箱>" && cat ~/.ssh/id_rsa.pub.pub
+ssh-keygen -t rsa -b 4096 -C "<github 注册邮箱>" && cat ~/.ssh/id_rsa.pub
 ```
 - 打开github setting界面
 <div style="text-align:center; margin:auto"><img src="img/2020-01-14-01-18-35.png"></div>
@@ -176,6 +176,7 @@ twine upload dist/*
 
 ### 更新package
 ```sh
+# 在setup.py中变更版本号
 python3 setup.py sdist bdist_wheel
 twine upload --skip-existing dist/*
 git add -A && git commit -m 'update' && git push
